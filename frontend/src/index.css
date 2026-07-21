@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-paper: #EEF0EA;
+  --color-paper-dim: #E4E7DE;
+  --color-ink: #171F1B;
+  --color-ink-soft: #4B5750;
+  --color-teal: #1F4B45;
+  --color-teal-dark: #12332F;
+  --color-teal-soft: #DDE6E2;
+  --color-amber: #D69A2D;
+  --color-amber-soft: #F3E3C2;
+  --color-rust: #B5432D;
+  --color-rust-soft: #F1DAD3;
+  --color-moss: #3F7D5C;
+  --color-moss-soft: #DCEAE1;
+  --color-line: #C9CDC2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Ticket stub perforation for job cards */
+.ticket-perforation {
+  position: relative;
+  border-left: 2px dashed var(--color-line);
+}
+
+.ticket-perforation::before,
+.ticket-perforation::after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  background: var(--color-paper);
+  border-radius: 9999px;
+  border: 2px solid var(--color-line);
+}
+
+.ticket-perforation::before {
+  top: -10px;
+}
+
+.ticket-perforation::after {
+  bottom: -10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 9999px;
+}
