@@ -24,10 +24,17 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(cors(corsOptions));
 
 
 const PORT= process.env.PORT || 3000;
+
+// Health Check
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Job Portal Backend is running"
+    });
+});
 
 
 // api
