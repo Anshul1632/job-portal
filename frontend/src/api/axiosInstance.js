@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base URL of your backend (matches PORT in backend/.env)
-export const BASE_URL = "http://localhost:8000/api/v1";
+export const BASE_URL = import.meta.env.VITE_API_URL;
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
